@@ -1,0 +1,263 @@
+@define-color bg #000000;       /* Hitam pekat */
+@define-color fg #ffffff;
+@define-color cyan #33ccff;      /* Hanya dipakai di workspace */
+@define-color cyan2 #00ff99;     /* Hanya dipakai di workspace */
+@define-color ia1 #0a0a0a;
+
+* {
+  border-radius: 0px;
+  font-family: 'JetBrainsMono Nerd Font Propo';
+  font-size: 12px;
+  font-weight: bold;
+  min-height: 0;
+  border: none;                  /* Hilangkan semua border */
+}
+
+/* --- Waybar ---*/
+window#waybar {
+  background-color: @bg;
+  border: none;                  /* Hilangkan border waybar */
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* --- Modules --- */
+.modules-left {
+  margin-left: 5px;
+}
+
+.modules-center {
+  background: transparent;
+  border: none;                  /* Hilangkan border */
+  margin: 2px 8px 2px 0px;
+  padding: 0px;
+}
+
+.modules-right {
+  background: transparent;
+  border: none;                  /* Hilangkan border */
+  margin: 2px 8px 2px 0px;
+  padding: 0px;
+}
+
+/* --- Workspaces (cyan hanya di sini) --- */
+#workspaces {
+  background-color: transparent;
+  border: none;                  /* Hilangkan border */
+  margin: 1px 8px 2px 0px;
+}
+
+#workspaces button {
+  color: #ffffff;
+  background-color: transparent;
+  margin: 2px;
+  padding: 0 5px;
+  border: none;                  /* Hilangkan border */
+}
+
+#workspaces button:first-child {
+  border-radius: 0px;
+}
+
+#workspaces button:last-child {
+  border-radius: 0px;
+}
+
+#workspaces button:first-child:last-child {
+  border-radius: 0px;
+}
+
+#workspaces button.urgent {
+  color: #ffffff;
+  background: linear-gradient(135deg, @cyan, @cyan2);
+}
+
+#workspaces button.active {
+  background: linear-gradient(135deg, @cyan, @cyan2);
+  color: @bg;
+}
+
+#workspaces button.empty {
+  color: #ffffff;
+  opacity: 0.4;
+}
+
+#workspaces button.empty.active {
+  color: @bg;
+  opacity: 1;
+}
+
+/* --- Logo Arch --- */
+#custom-logo {
+  padding: 0 8px;
+  background: transparent;
+  color: @cyan;
+  font-size: 16px;
+  margin: 1px 8px 2px 0px;
+  border: none;                  /* Hilangkan border */
+}
+
+/* --- Custom Omarchy --- */
+#custom-omarchy {
+  padding: 0 5px;
+  background-color: transparent;
+  border: none;                  /* Hilangkan border */
+  color: #ffffff;
+  margin: 1px 8px 2px 0px;
+}
+
+#window {
+  padding: 0 5px;
+  background: transparent;
+  border: none;                  /* Hilangkan border */
+  margin: 1px 8px 2px 0px;
+  color: #ffffff;
+}
+
+/* --- General Modules --- */
+#tray,
+#cava,
+#memory,
+#cpu,
+#battery,
+#network,
+#custom-updatespacman,
+#temperature,
+#bluetooth,
+#pulseaudio,
+#custom-expand-icon,
+#custom-weather,
+#custom-update,
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator,
+#clock {
+  min-width: 12px;
+  padding: 0 5px;
+  margin: 0 2px;
+  color: #ffffff;
+  background: transparent;
+  border: none;                  /* Hilangkan border */
+}
+
+/* --- Margin antar modul (pemisah) --- */
+#tray,
+#cava,
+#memory,
+#cpu,
+#battery,
+#network,
+#custom-updatespacman,
+#temperature,
+#bluetooth,
+#pulseaudio,
+#clock {
+  margin: 2px 4px;
+}
+
+/* --- Right module Hover color --- */
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#temperature:hover,
+#bluetooth:hover,
+#network:hover,
+#pulseaudio:hover {
+  background-color: @ia1;
+  color: #ffffff;
+}
+
+#cava {
+  padding: 0 5px;
+  background-color: transparent;
+  border: none;                  /* Hilangkan border */
+  margin: 2px 4px;
+  color: #ffffff;
+}
+
+/* --- Tooltip (dark mode) --- */
+tooltip {
+  padding: 4px;
+  background: #000000;
+  font-size: 10px;
+  border: none;                  /* Hilangkan border */
+  border-radius: 0px;
+}
+
+tooltip label {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+#mpris {
+  padding: 0 5px;
+  background-color: transparent;
+  border: none;                  /* Hilangkan border */
+  margin: 2px 4px;
+  color: #ffffff;
+}
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 2.5px;
+  color: #ffffff;
+}
+
+#custom-voxtype.recording {
+  color: #ff6b6b;
+}
+
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  min-width: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 10px;
+  padding-bottom: 1px;
+  color: #ffffff;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #ff6b6b;
+}
+
+/* Specific Module */
+#tray-expander {
+  padding: 0 0px;
+  margin: 0px;
+  background: @transparent;
+  color: #ffffff;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator {
+  font-size: 12px;
+  padding: 0 2px;
+  margin: 2px;
+  color: #ffffff;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #ff6b6b;
+  animation-name: blink-recording;
+  animation-duration: 0.5s;
+}
+
+@keyframes blink-recording {
+  to {
+    color: @background;
+  }
+}
